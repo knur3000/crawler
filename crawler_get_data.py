@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import urllib3
 import morfeusz2
 import yaml
+import datetime
 
 
 def count_nouns(titles: list):
@@ -53,11 +54,19 @@ def extract_tiles(url):
 
 def run():
     """ Runs the crawler"""
+
+    distinct: dict = {}
+
     with open('urls.yaml') as f:
         urls = yaml.load(f, Loader=yaml.FullLoader)
         for sites in urls:
             slownik = count_nouns(extract_tiles(sites))
-            print(slownik)
+            for key, count in slownik.items():
+                distinct.setdefault(key,0)
+                distinct[key] += count
 
 
-run()
+    return {"Date": str(datetime.date.today()), "Results": distinct}
+
+
+print(run())
