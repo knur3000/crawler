@@ -1,0 +1,4 @@
+#list of urls to be crawled
+- https://www.tvn24.pl/wiadomosci-z-kraju,3.xml
+- https://www.tvn24.pl/wiadomosci-ze-swiata,2.xml
+- https://www.tvn24.pl/biznes-gospodarka,6.xml
