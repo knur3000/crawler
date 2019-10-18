@@ -3,7 +3,7 @@ import urllib3
 import morfeusz2
 import yaml
 import datetime
-
+import operator
 
 def count_nouns(titles: list):
     """Return dictionary of occurences of nouns(nominative) in article titles"""
@@ -66,7 +66,9 @@ def run():
                 distinct[key] += count
 
 
-    return {"Date": str(datetime.date.today()), "Results": distinct}
+    top_3 = dict(sorted(distinct.items(), key=operator.itemgetter(1), reverse=True))
+    top_3 = {key:value for key,value in list(top_3.items())[0:4]}
+    return {"Date": str(datetime.date.today()), "Results": distinct, "Top": top_3}
 
 
-print(run())
+run()

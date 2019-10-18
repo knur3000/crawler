@@ -1,4 +1,8 @@
 #list of urls to be crawled
 - https://www.tvn24.pl/wiadomosci-z-kraju,3.xml
 - https://www.tvn24.pl/wiadomosci-ze-swiata,2.xml
-- https://www.tvn24.pl/biznes-gospodarka,6.xml
+- https://www.rmf24.pl/fakty/polska/feed
+- https://www.rmf24.pl/fakty/swiat/feed
+- https://www.polsatnews.pl/rss/polska.xml
+- https://www.polsatnews.pl/rss/swiat.xml
+
